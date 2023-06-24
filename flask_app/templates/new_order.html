@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Order</title>
+</head>
+<body>
+    <a href="/">Home</a>
+    <h1>New Order</h1>
+        <form action="/cookies" method="POST">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <label for="name">Customer Name:</label>
+            <input type="text" name="name" id="name">
+            <label for="cookie_type">Cookie Type:</label>
+            <input type="text" name="cookie_type" id="cookie_type">
+            <label for="num_boxes" >Number of Boxes:</label>
+            <input type="number" name="num_boxes" id="num_boxes">
+            <input type="submit" value="Submit Order">
+        </form> 
+
+</body>
+</html>
